@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Ethnocentric';
+  src: url('/fonts/Ethnocentric-Rg.otf') format('opentype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Gilmer';
+  src: url('/fonts/Gilmer-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gilmer';
+  src: url('/fonts/Gilmer-Light.otf') format('opentype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-gilmer: "Gilmer", sans-serif;
+  --font-ethno: "Ethnocentric", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  
+  --color-arc-lime: #CCFF00;
+  --color-arc-violet: #8B5CF6;
+  --color-arc-bg: #050505;
+  --color-arc-ink: #141414;
+}
+
+@layer base {
+  body {
+    @apply bg-arc-bg text-[#E5E5E5] font-sans;
+    margin: 0;
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/3 backdrop-blur-md border border-white/8;
+  }
+  
+  .neon-text {
+    @apply text-arc-lime;
+    text-shadow: 0 0 15px rgba(204, 255, 0, 0.3);
+  }
+  
+  .neon-border {
+    @apply border-arc-lime/30;
+    box-shadow: 0 0 15px rgba(204, 255, 0, 0.1);
+  }
+  
+  .mono {
+    @apply font-mono uppercase tracking-[0.1em] text-[10px];
+  }
+  
+  .grid-fragment {
+    background-image: linear-gradient(rgba(204, 255, 0, 0.05) 1px, transparent 1px), 
+                      linear-gradient(90deg, rgba(204, 255, 0, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    mask-image: radial-gradient(circle at center, black, transparent 85%);
+  }
+  
+  .bg-glow-lime {
+    box-shadow: 0 0 50px -10px rgba(204, 255, 0, 0.15);
+  }
+
+  .text-glow-none {
+    text-shadow: none;
+  }
+}
